@@ -1,9 +1,13 @@
 import React from 'react';
+import {NavigationBar} from './NavigationBar';
+import {Login} from './Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
     <div className="App">
-      Would you rather
+      <Login />
     </div>
   );
 }
