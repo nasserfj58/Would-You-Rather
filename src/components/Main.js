@@ -1,15 +1,15 @@
 import React from 'react';
-import {Alert} from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Alert } from 'react-bootstrap';
+import { NavigationBar } from './NavigationBar';
 
-function MyApp() {
+const Main = () => {
     return (
+
         <div>
-        <Alert key={1} variant='primary'>
-            This is a alert—check it out!
-        </Alert>
-      </div>
+            <NavigationBar />
+        </div>
+
     );
 }
 
-export default MyApp;
+export default Main;
