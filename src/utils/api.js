@@ -1,11 +1,17 @@
 import { _getUsers, _getQuestions, _saveQuestion, _saveQuestionAnswer } from './_DATA'
 
-export const GetUsers = () => {
-    return _getUsers();
+
+export const GetIntialData = () => {
+    return Promise.all([
+        _getUsers(),
+        _getQuestions()
+    ]).then(([users, questions]) => ({
+        users,
+        questions
+
+    }))
 }
-export const GetQuestions = () => {
-    return _getQuestions();
-}
+
 export const SaveQuestion = (question) => {
     return _saveQuestion(question);
 }
