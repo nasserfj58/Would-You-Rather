@@ -13,14 +13,14 @@ class Login extends React.Component {
 
     }
     handleClick = () => {
-       // console.log(this.props);
-        debugger;
-        console.log(this.props);
         if (this.state.UserID != '') {
             const { dispatch} = this.props;
             var auth = dispatch(AuthorizeUser(this.state.UserID))
             this.props.history.push("/");
             this.setState({ IsAuth: true });
+        }
+        else{
+            alert("Please select a user ..");
         }
     }
     handleChange = (e) => {

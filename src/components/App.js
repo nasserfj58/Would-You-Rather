@@ -9,6 +9,7 @@ import Login from './Login';
 import { connect } from 'react-redux';
 import { NotFound } from './NotFound';
 import Main  from './Main';
+import Leaderboard from './Leaderborad';
 
 class App extends React.Component {
   componentDidMount() {
@@ -37,6 +38,8 @@ class App extends React.Component {
                     <Switch>
                       <Route path="/" exact component={Main} />
                       <Route path="/logout" exact component={Main} />
+                      <Route path="/add" exact />
+                      <Route path="/leaderboard" exact component={Leaderboard}/>
                       <Route component={NotFound} />
                     </Switch>
                   </div>

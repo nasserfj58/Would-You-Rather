@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: 'tylermcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: "https://img.icons8.com/plasticine/100/000000/user.png",
+    avatarURL: "https://img.icons8.com/plasticine/30/000000/user.png",
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: 'johndoe',
     name: 'John Doe',
-    avatarURL:"https://img.icons8.com/doodle/48/000000/user.png",
+    avatarURL:"https://img.icons8.com/doodle/30/000000/user.png",
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
