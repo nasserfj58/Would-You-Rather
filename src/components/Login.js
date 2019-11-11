@@ -68,11 +68,11 @@ class Login extends React.Component {
 }
 
 
-function mapStateToProps({ users }) {
-   console.log(users);
+function mapStateToProps({ users,user }) {
+  
     return {
         users: Object.entries(users).map(([key, value]) => ({ id: value.id, name: value.name })),
-       
+        isAuthUser: user !== null
     }
 }
 // function mapAuthrizeToProps(dispatch) {

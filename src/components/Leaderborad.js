@@ -1,11 +1,17 @@
 import React from "react";
 import { Table, Image } from "react-bootstrap";
 import { connect } from 'react-redux';
-import { user } from "../reducers/user";
 import { NavigationBar } from './NavigationBar';
-class Leaderboard extends React.Component {
-    render() {
+import { UauthorizeUser } from '../actions/user';
 
+
+class Leaderboard extends React.Component {
+    logOut = () => {
+        
+        this.props.dispatch(UauthorizeUser(this.props.authUser));
+        this.props.history.push("/login");
+    }
+    render() {
         return (
             <div>
                 <NavigationBar logOut={this.logOut} history={this.props.history} logo={this.props.logo} name={this.props.name} />
@@ -38,7 +44,7 @@ class Leaderboard extends React.Component {
     };
 }
 
-function mapStateToProps({ users,user }) {
+function mapStateToProps({ users, user }) {
     const authUser = users[user];
     return {
         currentUsers: Object.values(users).sort((a, b) =>

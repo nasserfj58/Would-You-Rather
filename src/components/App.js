@@ -1,15 +1,13 @@
 import React from 'react';
-import { NavigationBar } from './NavigationBar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { LoadingBar } from 'react-redux-loading';
 import { handleIntialData } from '../actions/shared';
-import { GetauthorizeUser } from '../actions/user';
 import Login from './Login';
 import { connect } from 'react-redux';
-import { NotFound } from './NotFound';
 import Main  from './Main';
 import Leaderboard from './Leaderborad';
+import NewQuestion from './NewQuestion';
 
 class App extends React.Component {
   componentDidMount() {
@@ -38,9 +36,8 @@ class App extends React.Component {
                     <Switch>
                       <Route path="/" exact component={Main} />
                       <Route path="/logout" exact component={Main} />
-                      <Route path="/add" exact />
+                      <Route path="/add" exact component={NewQuestion} />
                       <Route path="/leaderboard" exact component={Leaderboard}/>
-                      <Route component={NotFound} />
                     </Switch>
                   </div>
               }
@@ -53,7 +50,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps({ user, users }) {
-  console.log(Object.keys(users).length === 0 && users.constructor === Object);
+  console.log(user);
   return {
     loading: Object.keys(users).length === 0 && users.constructor === Object,
     isAuthUser: user !== null

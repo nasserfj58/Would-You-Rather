@@ -1,32 +1,45 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
 import { connect } from 'react-redux';
+import { NavigationBar } from './NavigationBar';
+import { UauthorizeUser } from '../actions/user';
+class NewQuestion extends React.Component {
+    logOut = () => {
+        this.props.dispatch(UauthorizeUser(this.props.authUser));
+        this.props.history.push("/login");
+    }
+    render() {
+        return (
+            <div>
+                <NavigationBar logOut={this.logOut} history={this.props.history} logo={this.props.logo} name={this.props.name} />
+                <Form>
+                    <Form.Text className="text-muted">
+                        Would You Rather .. ?
+        </Form.Text>
+                    <Form.Group controlId="formOption1">
+                        <Form.Label>Option 1</Form.Label>
+                        <Form.Control placeholder="Option 1" />
+                    </Form.Group>
 
-export const NewQuestion = (props) => {
+                    <Form.Group controlId="formOption1">
+                        <Form.Label>Option 2</Form.Label>
+                        <Form.Control placeholder="Optin 2" />
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Add Question
+                </Button>
+                </Form>
+            </div>
+        )
+    }
+}
+function mapStateToProps({ user, users }) {
+    const authUser = users[user];
 
-    return (
-        <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-    </Form.Text>
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-  </Button>
-        </Form>
-    );
+    return {
+        logo: authUser.avatarURL,
+        name: authUser.name
+    }
 }
 
-
-export default connect()(NavigationBar);
+export default connect(mapStateToProps)(NewQuestion);
