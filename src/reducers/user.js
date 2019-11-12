@@ -1,4 +1,4 @@
-import { AUTHORIZE_USER, UAUTHORIZE_USER,GET_AUTHORIZE_USER } from '../actions/user';
+import { AUTHORIZE_USER, UAUTHORIZE_USER, GET_AUTHORIZE_USER } from '../actions/user';
 
 export const user = (state = null, action) => {
 
@@ -6,9 +6,9 @@ export const user = (state = null, action) => {
         case AUTHORIZE_USER:
             return action.id;
         case UAUTHORIZE_USER:
-            return null;   
+            return null;
         case GET_AUTHORIZE_USER:
-            return state;   
+            return state;
         default:
             return state
     }

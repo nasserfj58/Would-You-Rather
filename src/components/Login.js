@@ -14,12 +14,12 @@ class Login extends React.Component {
     }
     handleClick = () => {
         if (this.state.UserID != '') {
-            const { dispatch} = this.props;
+            const { dispatch } = this.props;
             var auth = dispatch(AuthorizeUser(this.state.UserID))
             this.props.history.push("/");
             this.setState({ IsAuth: true });
         }
-        else{
+        else {
             alert("Please select a user ..");
         }
     }
@@ -29,18 +29,10 @@ class Login extends React.Component {
     }
 
     render() {
-        // if (this.state.IsAuth) {
-        //     return (
-        //         <Switch>
-        //             <Route component={App} />
-        //         </Switch>
-        //     )
-        // }
-
 
         return (
             <Container style={{
-                position: 'absolute', left: '50%', top: '50%',
+                position: 'absolute', left: '20%', top: '20%',
             }}>
 
                 <Row>
@@ -67,21 +59,12 @@ class Login extends React.Component {
 
 }
 
+function mapStateToProps({ users, user }) {
 
-function mapStateToProps({ users,user }) {
-  
     return {
         users: Object.entries(users).map(([key, value]) => ({ id: value.id, name: value.name })),
         isAuthUser: user !== null
     }
 }
-// function mapAuthrizeToProps(dispatch) {
-//     return { 
-//       IsAuthrize : ()=> dispatch(GetauthorizeUser())
-   
-//     }
-//   }
-
-
 
 export default connect(mapStateToProps)(Login);

@@ -50,14 +50,15 @@ class App extends React.Component {
 }
 
 function mapStateToProps({ user, users }) {
-  console.log(user);
   return {
     loading: Object.keys(users).length === 0 && users.constructor === Object,
-    isAuthUser: user !== null
+    isAuthUser: user !== null,
+  
 
 
   }
 }
+
 
 
 export default connect(mapStateToProps)(App)
