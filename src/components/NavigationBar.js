@@ -10,7 +10,7 @@ export const NavigationBar = (props) => {
             <Navbar.Brand><NavLink to="/">Would You Rather ?</NavLink></Navbar.Brand>
             <Nav className="mr-auto">
                 <NavLink to="/" style={{marginLeft:"15px"}}>Questions</NavLink>
-                <NavLink to="/add" style={{marginLeft:"15px"}}>AddQuestion</NavLink>
+                <NavLink to="/add" style={{marginLeft:"15px"}}>Add Question</NavLink>
                 <NavLink to="/leaderboard" style={{marginLeft:"15px"}}>Leaderboard</NavLink>
                 <div style={{marginLeft:"15px"}}>
                      {props.name}
@@ -19,7 +19,6 @@ export const NavigationBar = (props) => {
                  <NavLink to="/login" onClick={() => { props.logOut() }} style={{marginLeft:"15px"}}>
                      Logout
                 </NavLink>                
-                {/* <Nav.Link onClick={() => { props.logOut() }}>Logout</Nav.Link> */}
             </Nav>
         </Navbar>
     );

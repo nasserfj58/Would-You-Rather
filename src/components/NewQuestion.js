@@ -23,7 +23,7 @@ class NewQuestion extends React.Component {
     }
     addQuestion = () => {
 
-        const { dispatch, userId, history } = this.props;
+        const { dispatch, history } = this.props;
         const { option1, option2 } = this.state
         if (!option1 || !option2) {
             alert("Please Fill the Option");

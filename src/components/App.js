@@ -11,7 +11,7 @@ import Leaderboard from './Leaderborad';
 import NewQuestion from './NewQuestion';
 import AnswerQuestion from './AnswerQuestion';
 import { NavigationBar } from './NavigationBar';
-import { CardColumns } from 'react-bootstrap';
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -58,13 +58,12 @@ class App extends React.Component {
 }
 
 function mapStateToProps({ user, users }) {
-  const authUser = users[user];
-
+ 
   return {
     loading: Object.keys(users).length === 0 && users.constructor === Object,
     isAuthUser: user !== null,
-    logo: user !== null? authUser.avatarURL:null,
-    name: user !== null? authUser.name:null,
+    logo: user !== null? users[user].avatarURL:null,
+    name: user !== null? users[user].name:null,
 
 
 

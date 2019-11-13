@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Image, Radio } from "react-bootstrap";
+import { Card, Button, Image } from "react-bootstrap";
 import { connect } from 'react-redux';
 import { handleSaveAnswer } from '../actions/shared';
 
@@ -22,7 +22,7 @@ class AnswerQuestion extends React.Component {
 
         }
         const question = this.props.unanswerdQuestions.filter(x => x.id === this.props.match.params["question_id"])[0];
-        const { dispatch, userId, history } = this.props;
+        const { dispatch, history } = this.props;
         dispatch(handleSaveAnswer(question.id, answer));
         history.push('/');
 
@@ -36,7 +36,7 @@ class AnswerQuestion extends React.Component {
                     <Image src={question.logo} />
                     <Card.Title>Author : {question.author}</Card.Title>
                     <Card.Text>
-                        {question.option1}
+                        Option One : {question.option1} 
                         <input type="radio" name="woludYouRather"
                             value="optionOne"
                             onChange={this.handleRadioOtionChange} />
@@ -47,7 +47,7 @@ class AnswerQuestion extends React.Component {
                         Percentage : {question.op1P} %
                     </Card.Text>
                     <Card.Text>
-                        {question.option2}
+                    option Two : {question.option2}
                         <input type="radio" name="woludYouRather"
                             value="optionTwo"
                             onChange={this.handleRadioOtionChange} />

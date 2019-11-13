@@ -18,7 +18,7 @@ export function handleIntialData() {
 }
 export function handleSaveQuestion(option1, option2) {
     return (dispatch, getState) => {
-        const { user, users } = getState()
+        const { user } = getState()
         dispatch(showLoading())
 
         return SaveQuestion({

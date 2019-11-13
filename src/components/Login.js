@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, Form, Row, Container, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
-import { AuthorizeUser, GetauthorizeUser } from '../actions/user';
-import { Route, Switch } from 'react-router-dom';
-import App from './App';
+import { AuthorizeUser } from '../actions/user';
+
 
 
 class Login extends React.Component {
@@ -13,9 +12,9 @@ class Login extends React.Component {
 
     }
     handleClick = () => {
-        if (this.state.UserID != '') {
+        if (this.state.UserID !== '') {
             const { dispatch } = this.props;
-            var auth = dispatch(AuthorizeUser(this.state.UserID))
+            dispatch(AuthorizeUser(this.state.UserID))
             this.props.history.push("/");
             this.setState({ IsAuth: true });
         }
