@@ -14,6 +14,12 @@ We need to have node and npm installed in your machine
 ### References
 ##### Rest API icon by Icons8 : 
  https://icons8.com/icon/55497/rest-api 
+ #### https://github.com/udacity/reactnd-chirper-app
+ #### https://stackoverflow.com/questions/10123953/how-to-sort-an-array-by-a-date-property
+ #### https://stackoverflow.com/questions/49825386/how-to-add-style-like-margin-to-react-component
+ #### https://tylermcginnis.com/blog/
+ #### https://react-bootstrap.github.io/
+ #### https://stackoverflow.com/questions/50644976/react-button-onclick-redirect-page
 
 
 
