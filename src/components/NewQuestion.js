@@ -1,17 +1,11 @@
 import React from "react";
 import { Form, Button, Row, Container, Col } from "react-bootstrap";
 import { connect } from 'react-redux';
-import { NavigationBar } from './NavigationBar';
-import { UauthorizeUser } from '../actions/user';
 import { handleSaveQuestion } from '../actions/shared';
 class NewQuestion extends React.Component {
     state = {
         option1: '',
         option2: ''
-    }
-    logOut = () => {
-        this.props.dispatch(UauthorizeUser(this.props.authUser));
-        this.props.history.push("/login");
     }
     updateOptions = (e) => {
         const option = e.target.value;
@@ -30,20 +24,18 @@ class NewQuestion extends React.Component {
     }
     addQuestion = () => {
 
-        const {dispatch,userId,history} = this.props;
-        const {option1, option2} = this.state
-        if (!this.state.option1 || !this.state.option2) {
+        const { dispatch, userId, history } = this.props;
+        const { option1, option2 } = this.state
+        if (!option1 || !option2) {
             alert("Please Fill the Option");
             return;
         }
-        dispatch(handleSaveQuestion(option1,option2));
+        dispatch(handleSaveQuestion(option1, option2));
         history.push('/');
     }
     render() {
         return (
             <div>
-
-                <NavigationBar logOut={this.logOut} history={this.props.history} logo={this.props.logo} name={this.props.name} />
                 <Container style={{
                     position: 'absolute', left: '25%', top: '25%',
                 }}>
@@ -77,8 +69,7 @@ function mapStateToProps({ user, users }) {
     const authUser = users[user];
 
     return {
-        logo: authUser.avatarURL,
-        name: authUser.name,
+
         userId: authUser.id
     }
 }

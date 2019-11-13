@@ -1,4 +1,4 @@
-import { RECEIVE_Questions,ADD_QUESTION } from '../actions/questions'
+import { RECEIVE_Questions, ADD_QUESTION, ADD_QUESTION_ANSWER } from '../actions/questions'
 
 export const questions = (state = {}, action) => {
 
@@ -12,6 +12,20 @@ export const questions = (state = {}, action) => {
             return {
                 ...state,
                 [action.question.id]: action.question
+            };
+        case ADD_QUESTION_ANSWER:
+            console.log(state);
+            console.log(action);
+            return {
+                
+                ...state,
+                [action.questionId]: {
+                    ...state[action.questionId],
+                    [action.option]: {
+                        ...state[action.questionId][action.option],
+                        votes: state[action.questionId][action.option].votes.concat([action.userId])
+                    }
+                }
             };
         default:
             return state
