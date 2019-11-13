@@ -14,8 +14,6 @@ export const questions = (state = {}, action) => {
                 [action.question.id]: action.question
             };
         case ADD_QUESTION_ANSWER:
-            console.log(state);
-            console.log(action);
             return {
                 
                 ...state,

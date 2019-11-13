@@ -21,10 +21,7 @@ class App extends React.Component {
     }
   }
   logOut = () => {
-    console.log(this.props);
     this.props.dispatch(UauthorizeUser(this.props.user));
-
-    //this.props.history.push("/login");
 }
   render() {
     return (

@@ -24,7 +24,6 @@ class Login extends React.Component {
         }
     }
     handleChange = (e) => {
-        console.log(e);
         this.setState({ UserID: e.target.value });
     }
 

@@ -3,7 +3,7 @@ export const UAUTHORIZE_USER = 'UAUTHORIZE_USER';
 export const GET_AUTHORIZE_USER = 'GET_AUTHORIZE_USER';
 
 export const AuthorizeUser = (id) => {
-    console.log(id);
+    
     return {
         type: AUTHORIZE_USER,
         id,

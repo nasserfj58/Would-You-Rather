@@ -16,6 +16,5 @@ export const SaveQuestion = (question) => {
     return _saveQuestion(question);
 }
 export const SaveQuestionAnswer = (answer) => {
-    console.log(answer);
     return _saveQuestionAnswer(answer);
 }

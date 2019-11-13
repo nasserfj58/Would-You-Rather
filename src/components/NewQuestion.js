@@ -9,7 +9,6 @@ class NewQuestion extends React.Component {
     }
     updateOptions = (e) => {
         const option = e.target.value;
-        console.log(e.target);
         if (option) {
             if (e.target.id === "option1")
                 this.setState({
